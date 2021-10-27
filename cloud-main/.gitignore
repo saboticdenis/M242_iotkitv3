@@ -1,0 +1,42 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+
+# Executables
+*.exe
+*.out
+*.app
+BUILD
+.mbed
+mbed-os
+mbed-client-for-azure
+ntp-client
+iotkit
+HTS221
+bmp180
+
+mbed_app.json-with-connection-string

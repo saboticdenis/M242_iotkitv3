@@ -1,0 +1,50 @@
+{
+    "config": {
+        "iothub_connection_string": {
+            "help": "Azure IoT Hub connection string",
+            "value": "\"HostName=iotkitv3.azure-devices.net;DeviceId=...;SharedAccessKey=...\""
+        },
+        "iothub_client_trace": {
+            "help": "Enable IoT Hub Client tracing",
+            "value": false
+        }
+    },
+    "target_overrides": {
+        "*": {
+            "platform.stdio-convert-newlines": true,
+            "target.printf_lib": "std",
+            "platform.stdio-baud-rate": 9600,
+            "nsapi.default-wifi-security": "WPA_WPA2",
+            "nsapi.default-wifi-ssid": "\"LERNKUBE\"",
+            "nsapi.default-wifi-password": "\"l3rnk4b3\""            
+        },
+        "DISCO_L475VG_IOT01A": {
+            "iothub_connection_string": "\"HostName=iotkitv3.azure-devices.net;DeviceId=DISCO_L475VG_IOT;SharedAccessKey=\"",
+            "target.network-default-interface-type": "WIFI",
+            "target.components_add": ["wifi_ism43362"],
+            "ism43362.provide-default": true
+        },
+        "K64F": {
+            "iothub_connection_string": "\"HostName=iotkitv3.azure-devices.net;DeviceId=K64F;SharedAccessKey=\"",
+            "target.network-default-interface-type": "WIFI",
+            "esp8266.provide-default" : true,
+            "esp8266.rx": "PTC14",
+            "esp8266.tx": "PTC15",
+            "esp8266.rst": "D9"            
+        },
+        "NUCLEO_F746ZG": {
+            "iothub_connection_string": "\"HostName=iotkitv3.azure-devices.net;DeviceId=NUCLEO_F746ZG;SharedAccessKey=\"",
+            "target.network-default-interface-type": "WIFI",
+            "esp8266.provide-default" : true,
+            "esp8266.rx": "D0",
+            "esp8266.tx": "D1"            
+        }, 
+        "NUCLEO_F429ZI": {
+            "iothub_connection_string": "\"HostName=iotkitv3.azure-devices.net;DeviceId=NUCLEO_F429ZI;SharedAccessKey=\"",
+            "target.network-default-interface-type": "WIFI",
+            "esp8266.provide-default" : true,
+            "esp8266.rx": "D0",
+            "esp8266.tx": "D1"
+        }                                 
+    }
+}
